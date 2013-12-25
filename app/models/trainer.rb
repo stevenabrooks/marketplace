@@ -6,4 +6,7 @@ class Trainer < ActiveRecord::Base
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :email, :format => { :with => /@/, :message => " is invalid" }
 
+  has_many :trainer_certifications, dependent: :destroy
+  has_many :certifications, through: :trainer_certifications
+
 end
