@@ -5,4 +5,5 @@ class Trainer < ActiveRecord::Base
   validates :name, :email, :presence => true
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :email, :format => { :with => /@/, :message => " is invalid" }
+
 end
