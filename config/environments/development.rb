@@ -34,10 +34,4 @@ Marketplace::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-
-  #App specific information
-  CLIENT_ID = 151251
-  CLIENT_SECRET = "7f4f8e65d2"
-  USE_STAGE = true
-  WEPAY = WePay.new(CLIENT_ID, CLIENT_SECRET, USE_STAGE)
 end
