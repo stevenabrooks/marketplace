@@ -8,7 +8,7 @@
   <%= @trainer.email %>
 </p>
 
-<% if @trainer.ratings %>
+<% if @trainer.ratings.size > 1 %>
   <p>
     <b>Rating (out of 10):</b>
     <%= @trainer.average_rating %>
