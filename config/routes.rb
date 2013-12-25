@@ -1,5 +1,10 @@
 Marketplace::Application.routes.draw do
+  get 'signup', to: 'trainer#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
   resources :trainers
+  resources :sessions
 
 
   root :to => 'welcome#index'

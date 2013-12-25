@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>WeFarm</title>
+<title>Marketplace</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%= stylesheet_link_tag    "application", :media => "all" %>
 <%= javascript_include_tag "application" %>
@@ -24,23 +24,23 @@
         <li>
           <a href="../getting-started">Getting started</a>
         </li>
-        <li>
-          <a href="../css">CSS</a>
-        </li>
-        <li>
-          <a href="../components">Components</a>
-        </li>
-        <li>
-          <a href="../javascript">JavaScript</a>
-        </li>
-        <li>
-          <a href="../customize">Customize</a>
-        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to "Register", new_trainer_path %>
-        </li>
+        <% unless current_user %>
+          <li>
+            <%= link_to "Register", new_trainer_path %>
+          </li>
+          <li>
+            <%= link_to "Log In", new_session_path %>
+          </li>
+        <% else %>
+          <li>
+            <a href="#"><%= current_user.email %></a>
+          </li>
+          <li>
+            <%= link_to "Log Out", session_path("current"), method: "delete" %>
+          </li>
+        <% end %>
       </ul>
     </nav>
   </div>
