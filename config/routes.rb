@@ -10,7 +10,7 @@ Marketplace::Application.routes.draw do
 
   resources :trainers
   resources :sessions
-
+  resources :ratings
   
 
   get 'certifications/:id', to: 'certifications#show', as: 'certifications'

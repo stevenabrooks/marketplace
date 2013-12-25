@@ -8,5 +8,15 @@ class Trainer < ActiveRecord::Base
 
   has_many :trainer_certifications, dependent: :destroy
   has_many :certifications, through: :trainer_certifications
+  has_many :ratings
 
+  def average_rating
+    counter = 0
+    a = self.ratings.size.to_f
+    self.ratings.each do |rating|
+      size = rating.rating
+      counter += size
+    end
+    counter/a
+  end
 end
