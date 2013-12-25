@@ -35,7 +35,7 @@
           </li>
         <% else %>
           <li>
-            <a href="#"><%= current_user.email %></a>
+            <%= link_to current_user.email, trainer_path(current_user.id) %>
           </li>
           <li>
             <%= link_to "Log Out", session_path("current"), method: "delete" %>
