@@ -1,4 +1,6 @@
 Marketplace::Application.routes.draw do
+  root :to => 'welcome#index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -9,7 +11,9 @@ Marketplace::Application.routes.draw do
   resources :trainers
   resources :sessions
 
-  root :to => 'welcome#index'
+  
+
+  get 'certifications/:id', to: 'certifications#show', as: 'certifications'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
